@@ -1,0 +1,29 @@
+{
+  "author": "Ersun Warncke <ersun.warncke@gmail.com>",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "immutable-instance-id": "^0.1.0",
+    "immutable-require-valid-log-client": "^0.1.0",
+    "lodash": "^4.16.4",
+    "mariasql": "^0.2.6",
+    "micro-timestamp": "^0.1.0",
+    "mockumentary": "^0.3.1",
+    "random-unique-id": "^0.1.0"
+  },
+  "description": "Immutable mariasql (mysql) database driver",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT",
+  "main": "lib/immutable-database-mariasql.js",
+  "name": "immutable-database-mariasql",
+  "repository": "warncke/immutable-database-mariasql",
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.1.0"
+}
