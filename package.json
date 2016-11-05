@@ -4,6 +4,7 @@
     "bluebird": "^3.4.6",
     "immutable-instance-id": "^0.1.0",
     "immutable-require-valid-log-client": "^0.1.0",
+    "immutable-require-valid-optional-object": "^0.1.0",
     "lodash": "^4.16.4",
     "mariasql": "^0.2.6",
     "micro-timestamp": "^0.1.0",
@@ -25,5 +26,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
