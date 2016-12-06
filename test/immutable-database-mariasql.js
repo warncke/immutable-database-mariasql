@@ -152,7 +152,9 @@ describe('immutable-database-mariasql', function () {
                     // validate log type
                     assert.strictEqual(type, 'dbResponse')
                     // validate data
-                    assert.match(data.data, /You have an error in your SQL syntax/)
+                    assert.match(data.data.message, /You have an error in your SQL syntax/)
+                    assert.strictEqual(data.data.code, 1064)
+                    assert.strictEqual(data.data.isOperational, true)
                     assert.strictEqual(data.dbQueryId, dbQueryId)
                     assert.match(data.dbResponseCreateTime, /^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\d\d\d$/)
                     assert.strictEqual(data.dbResponseSuccess, false)
