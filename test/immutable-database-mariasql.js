@@ -19,7 +19,11 @@ const connectionParams = {
     user: dbUser,
 }
 
-describe('immutable database mariasql', function () {
+describe('immutable-database-mariasql', function () {
+
+    beforeEach(function () {
+        ImmutableDatabaseMariaSQL.reset()
+    })
 
     it('should connect to database', function () {
         // create new connection
