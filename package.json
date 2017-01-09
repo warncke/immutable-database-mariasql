@@ -14,7 +14,8 @@
   "description": "Immutable mariasql (mysql) database driver",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "require-reload": "^0.2.2"
   },
   "directories": {
     "test": "test"
@@ -26,5 +27,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "0.3.0"
+  "version": "0.4.0"
 }

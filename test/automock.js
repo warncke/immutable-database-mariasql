@@ -4,6 +4,7 @@ const ImmutableDatabaseMariaSQL = require('../lib/immutable-database-mariasql')
 const MockLogClient = require('../mock/mock-log-client')
 const Promise = require('bluebird')
 const assert = require('chai').assert
+const reload = require('require-reload')(require)
 
 const dbHost = process.env.DB_HOST || 'localhost'
 const dbName = process.env.DB_NAME || 'test'
@@ -49,6 +50,17 @@ describe('immutable-database-mariasql: automock', function () {
         return db.query('test').then(function (res) {
             assert.strictEqual(res, 'automock called')
         })
+    })
+
+    it('should persist automockFunction globally', function () {
+        // create dummy automock function
+        var autmockFunction = function () {}
+        // set automock function globally
+        ImmutableDatabaseMariaSQL.automock(autmockFunction)
+        // reload module
+        reload('../lib/immutable-database-mariasql')
+        // automock function should be persisted
+        assert.strictEqual(ImmutableDatabaseMariaSQL.automock(), autmockFunction)
     })
 
 })
