@@ -3,7 +3,11 @@
 const ImmutableDatabaseMariaSQL = require('../lib/immutable-database-mariasql')
 const MockLogClient = require('../mock/mock-log-client')
 const Promise = require('bluebird')
-const assert = require('chai').assert
+const chai = require('chai')
+const chaiAsPromised = require('chai-as-promised');
+
+chai.use(chaiAsPromised);
+const assert = chai.assert
 
 const dbHost = process.env.DB_HOST || 'localhost'
 const dbName = process.env.DB_NAME || 'test'
@@ -211,57 +215,62 @@ describe('immutable-database-mariasql', function () {
         // create new connection
         var db = new ImmutableDatabaseMariaSQL(connectionParams)
         // query should throw on non string for query
-        assert.throws(function () { db.query(null) }, Error)
-        assert.throws(function () { db.query(false) }, Error)
-        assert.throws(function () { db.query(0) }, Error)
-        assert.throws(function () { db.query() }, Error)
-        // close connection
-        db.close()
+        return Promise.all([
+            assert.isRejected(db.query(null)),
+            assert.isRejected(db.query(false)),
+            assert.isRejected(db.query(0)),
+            assert.isRejected(db.query()),
+        ])
+        .finally(() => {
+            // close connection
+            db.close()
+        })
     })
 
     it('should throw error on invalid params arg', function () {
         // create new connection
         var db = new ImmutableDatabaseMariaSQL(connectionParams)
         // query should throw on non object params
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', null) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', false) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', true) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', []) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', 0) }, Error)
-        // try valid args
-        assert.doesNotThrow(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}) }, Error)
-        // close connection
-        db.close()
+        return Promise.all([
+            assert.isRejected(db.query('SELECT CURRENT_TIMESTAMP()', null)),
+            assert.isRejected(db.query('SELECT CURRENT_TIMESTAMP()', false)),
+            assert.isRejected(db.query('SELECT CURRENT_TIMESTAMP()', true)),
+            assert.isRejected(db.query('SELECT CURRENT_TIMESTAMP()', [])),
+            assert.isRejected(db.query('SELECT CURRENT_TIMESTAMP()', 0)),
+            assert.isFulfilled(db.query('SELECT CURRENT_TIMESTAMP()', {})),
+        ])
+        .finally(() => {
+            // close connection
+            db.close()
+        })
     })
 
     it('should throw error on invalid options arg', function () {
         // create new connection
         var db = new ImmutableDatabaseMariaSQL(connectionParams)
-        // query should throw on non object options
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, null) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, false) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, true) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, []) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, 0) }, Error)
-        // try valid args
-        assert.doesNotThrow(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, {}) }, Error)
-        // close connection
-        db.close()
+        // query should throw on non object params
+        return Promise.all([
+            assert.isRejected(db.query('SELECT CURRENT_TIMESTAMP()', {}, null)),
+            assert.isFulfilled(db.query('SELECT CURRENT_TIMESTAMP()', {}, {})),
+        ])
+        .finally(() => {
+            // close connection
+            db.close()
+        })
     })
 
     it('should throw error on invalid session arg', function () {
         // create new connection
         var db = new ImmutableDatabaseMariaSQL(connectionParams)
-        // query should throw on non object options
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, null) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, false) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, true) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, []) }, Error)
-        assert.throws(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, 0) }, Error)
-        // try valid args
-        assert.doesNotThrow(function () { db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, {}) }, Error)
-        // close connection
-        db.close()
+        // query should throw on non object params
+        return Promise.all([
+            assert.isRejected(db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, null)),
+            assert.isFulfilled(db.query('SELECT CURRENT_TIMESTAMP()', {}, {}, {})),
+        ])
+        .finally(() => {
+            // close connection
+            db.close()
+        })
     })
 
 })
