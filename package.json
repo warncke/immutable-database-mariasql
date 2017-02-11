@@ -1,22 +1,22 @@
 {
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
-    "bluebird": "^3.4.6",
-    "immutable-instance-id": "^0.1.0",
-    "immutable-require-valid-log-client": "^0.1.0",
-    "immutable-require-valid-optional-object": "^0.1.0",
-    "lodash": "^4.16.4",
-    "mariasql": "^0.2.6",
-    "micro-timestamp": "^0.1.0",
-    "mockumentary": "^0.3.1",
-    "random-unique-id": "^0.1.0"
+    "bluebird": "3.4.6",
+    "immutable-instance-id": "0.1.0",
+    "immutable-require-valid-log-client": "0.1.0",
+    "immutable-require-valid-optional-object": "0.1.0",
+    "lodash": "4.16.4",
+    "mariasql": "0.2.6",
+    "micro-timestamp": "0.1.0",
+    "mockumentary": "0.3.1",
+    "random-unique-id": "0.1.0"
   },
   "description": "Immutable mariasql (mysql) database driver",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "mocha": "^3.0.2",
-    "require-reload": "^0.2.2"
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "mocha": "3.0.2",
+    "require-reload": "0.2.2"
   },
   "directories": {
     "test": "test"
@@ -31,5 +31,5 @@
   "scripts": {
     "test": "mocha --harmony-async-await"
   },
-  "version": "1.0.0"
+  "version": "1.1.0"
 }
