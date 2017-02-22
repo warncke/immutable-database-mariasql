@@ -1,35 +1,35 @@
 {
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
-    "bluebird": "3.4.6",
-    "immutable-instance-id": "0.1.0",
-    "immutable-require-valid-log-client": "0.1.0",
-    "immutable-require-valid-optional-object": "0.1.0",
-    "lodash": "4.16.4",
+    "bluebird": "3.4.7",
+    "immutable-instance-id": "0.1.1",
+    "immutable-require-valid-log-client": "0.1.1",
+    "immutable-require-valid-optional-object": "0.1.1",
+    "lodash": "4.17.4",
     "mariasql": "0.2.6",
-    "micro-timestamp": "0.1.0",
-    "mockumentary": "0.3.1",
-    "random-unique-id": "0.1.0"
+    "micro-timestamp": "0.1.1",
+    "mockumentary": "0.3.2",
+    "random-unique-id": "0.1.1"
   },
   "description": "Immutable mariasql (mysql) database driver",
   "devDependencies": {
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",
-    "mocha": "3.0.2",
+    "mocha": "3.2.0",
     "require-reload": "0.2.2"
   },
   "directories": {
     "test": "test"
   },
   "engines": {
-    "node": ">=7.0.0"
+    "node": ">=7.6.0"
   },
   "license": "MIT",
   "main": "lib/immutable-database-mariasql.js",
   "name": "immutable-database-mariasql",
   "repository": "warncke/immutable-database-mariasql",
   "scripts": {
-    "test": "mocha --harmony-async-await"
+    "test": "mocha"
   },
-  "version": "1.1.0"
+  "version": "1.2.0"
 }
