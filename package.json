@@ -1,19 +1,22 @@
 {
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
-    "change-case": "3.0.1",
-    "immutable-core-model": "1.5.12",
+    "bluebird": "3.5.0",
+    "immutable-instance-id": "0.1.13",
+    "immutable-require-valid-log-client": "0.1.1",
+    "immutable-require-valid-optional-object": "0.1.1",
     "lodash": "4.17.4",
-    "merge-args": "0.2.1"
+    "mariasql": "0.2.6",
+    "micro-timestamp": "0.1.12",
+    "mockumentary": "0.3.2",
+    "random-unique-id": "0.1.8"
   },
-  "description": "Forms for Immutable Core Models",
+  "description": "Immutable mariasql (mysql) database driver",
   "devDependencies": {
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",
-    "chai-subset": "1.5.0",
-    "immutable-core": "1.2.12",
-    "immutable-database-mariasql": "1.2.13",
-    "mocha": "3.2.0"
+    "mocha": "3.2.0",
+    "require-reload": "0.2.2"
   },
   "directories": {
     "test": "test"
@@ -22,11 +25,11 @@
     "node": ">=7.6.0"
   },
   "license": "MIT",
-  "main": "lib/immutable-core-model-form.js",
-  "name": "immutable-core-model-form",
-  "repository": "warncke/immutable-core-model-form",
+  "main": "lib/immutable-database-mariasql.js",
+  "name": "immutable-database-mariasql",
+  "repository": "warncke/immutable-database-mariasql",
   "scripts": {
     "test": "mocha"
   },
-  "version": "0.4.14"
+  "version": "1.2.13"
 }
