@@ -2,14 +2,14 @@
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
     "bluebird": "3.5.0",
-    "immutable-instance-id": "0.1.14",
-    "immutable-require-valid-log-client": "0.1.1",
-    "immutable-require-valid-optional-object": "0.1.1",
+    "immutable-instance-id": "0.1.16",
+    "immutable-require-valid-log-client": "0.1.2",
+    "immutable-require-valid-optional-object": "0.1.2",
     "lodash": "4.17.4",
     "mariasql": "0.2.6",
-    "micro-timestamp": "0.1.13",
-    "mockumentary": "0.3.2",
-    "random-unique-id": "0.1.9"
+    "micro-timestamp": "0.1.14",
+    "mockumentary": "0.3.3",
+    "random-unique-id": "0.1.10"
   },
   "description": "Immutable mariasql (mysql) database driver",
   "devDependencies": {
@@ -31,5 +31,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "1.2.17"
+  "version": "1.2.18"
 }
