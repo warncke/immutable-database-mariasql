@@ -54,8 +54,8 @@ describe('immutable-database-mariasql', function () {
                 assert.strictEqual(data.connectionNum, 1)
                 assert.deepEqual(data.connectionParams, connectionParams)
                 assert.match(data.connectionCreateTime, /^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\.\d\d\d\d\d\d$/)
-                assert.match(data.connectionId, /^[0-9A-Z]{32}$/)
-                assert.match(data.instanceId, /^[0-9A-Z]{32}$/)
+                assert.match(data.connectionId, /^[0-9a-z]{32}$/)
+                assert.match(data.instanceId, /^[0-9a-z]{32}$/)
             },
         })
         // create new connection
