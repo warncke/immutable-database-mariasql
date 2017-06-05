@@ -9,7 +9,7 @@
     "mariasql": "0.2.6",
     "micro-timestamp": "0.1.19",
     "mockumentary": "0.3.7",
-    "random-unique-id": "1.0.3"
+    "random-unique-id": "1.0.4"
   },
   "description": "Immutable mariasql (mysql) database driver",
   "devDependencies": {
@@ -31,5 +31,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "1.3.4"
+  "version": "1.3.5"
 }
