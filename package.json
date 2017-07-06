@@ -2,7 +2,7 @@
   "author": "Ersun Warncke <ersun.warncke@gmail.com>",
   "dependencies": {
     "bluebird": "3.5.0",
-    "immutable-instance-id": "0.2.9",
+    "immutable-instance-id": "0.2.10",
     "immutable-require-valid-log-client": "0.1.8",
     "immutable-require-valid-optional-object": "0.1.8",
     "lodash": "4.17.4",
@@ -31,5 +31,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "1.3.14"
+  "version": "1.3.15"
 }
