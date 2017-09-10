@@ -15,7 +15,7 @@
   "devDependencies": {
     "chai": "4.1.2",
     "chai-as-promised": "7.1.1",
-    "mocha": "3.5.0",
+    "mocha": "3.5.1",
     "require-reload": "0.2.2"
   },
   "directories": {
@@ -31,5 +31,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "version": "1.3.22"
+  "version": "1.3.23"
 }
